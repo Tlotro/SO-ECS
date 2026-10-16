@@ -1,0 +1,13 @@
+.menu-button {
+    width: 160px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-property: -unity-background-image-tint-color;
+    transition-property: width;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
+}
+
+.menu-button:hover {
+    width: 180px;
+    -unity-background-image-tint-color: rgb(200, 200, 200);
+}
