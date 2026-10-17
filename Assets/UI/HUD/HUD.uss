@@ -3,3 +3,9 @@
     transition-property: width;
     transition-duration: 0.2s;
 }
+
+#ExpBar {
+    width: 100%;
+    transition-property: width;
+    transition-duration: 0.2s;
+}
