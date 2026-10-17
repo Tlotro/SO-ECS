@@ -33,8 +33,8 @@ public class UpgradeController : MonoBehaviour
                 else t.SetValueWithoutNotify(true);
             });
         });
-
-        root.Q<Button>("ConfirmButton").clicked += OnConfirm;
+        
+        root.Q<Button>("ConfirmButton").RegisterCallback<ClickEvent>(e => OnConfirm());
 
         if (m_Options.Count > 0) Select(0);
     }

@@ -9,7 +9,7 @@ public class PauseController : MonoBehaviour
     private UIDocument uiDocument;
     private VisualElement root;
 
-    private bool paused = false; // ← стартуем в игре, а не на паузе
+    private bool paused = false;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class PauseController : MonoBehaviour
 
     private void Pause()
     {
+        if (!paused && Time.timeScale == 0) return;
         paused = !paused;
         SetPauseMenuVisible(paused);
         Time.timeScale = paused ? 0f : 1f;
@@ -52,4 +53,5 @@ public class PauseController : MonoBehaviour
             root.SetEnabled(false);
         }
     }
+
 }
