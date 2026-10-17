@@ -82,7 +82,7 @@ public class UpgradeController : MonoBehaviour
         if (m_SelectedIndex < 0) return;
 
         SetUpgradeMenuVisible(false);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 1.0f;
 
         Debug.Log($"Upgrade #{m_SelectedIndex}");
     }
