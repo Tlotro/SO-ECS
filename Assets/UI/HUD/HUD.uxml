@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/HUD/HUD.uss?fileID=7433441132597879392&amp;guid=5247c34a2f82950439369d9a385a7adc&amp;type=3#HUD"/>
+    <ui:VisualElement name="HelthbarBackground" enabled="true" style="flex-grow: 0; width: 258px; height: 45px; position: absolute; background-image: url(&quot;project://database/Assets/Sprites/UI/HealthBarBack.png?fileID=2800000&amp;guid=a854bcc91b580844bafebf245d21ba58&amp;type=3#HealthBarBack&quot;); -unity-slice-left: 8; -unity-slice-right: 8; -unity-slice-type: tiled; -unity-slice-scale: 3px; -unity-background-scale-mode: stretch-to-fill; top: 87%; left: auto; flex-shrink: 0; align-self: center; justify-content: flex-start; bottom: auto; flex-direction: column;">
+        <ui:VisualElement style="flex-grow: 1; top: 27px; left: 6px; width: 246px; height: 12px; position: absolute;">
+            <ui:VisualElement name="HealthbarFill" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/UI/HealthBarFill.png?fileID=2800000&amp;guid=9a79054fc6220034b8b2dce1aa71cb72&amp;type=3#HealthBarFill&quot;); height: 12px; position: absolute; width: 100%; -unity-slice-left: 2; -unity-slice-right: 2; -unity-slice-scale: 3px; top: auto; left: auto;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="ExpBar" style="flex-grow: 0; position: absolute; width: 640px; height: 6px; background-image: url(&quot;project://database/Assets/Sprites/UI/UI_32x32.png?fileID=63441284&amp;guid=83138a228a042884292430001eb5e4c6&amp;type=3#UI_32x32_15&quot;); -unity-slice-left: 0; -unity-slice-right: 0; -unity-slice-scale: 1px; top: auto; left: auto; right: auto; flex-shrink: 0;"/>
+</ui:UXML>

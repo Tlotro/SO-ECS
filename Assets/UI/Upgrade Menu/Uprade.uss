@@ -1,0 +1,52 @@
+.menu-button {
+    width: 160px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    transition-property: -unity-background-image-tint-color;
+    transition-property: width;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
+}
+
+.menu-button:hover {
+    width: 180px;
+    -unity-background-image-tint-color: rgb(200, 200, 200);
+}
+
+.upgrade-group {
+    flex-direction: column;
+}
+
+.upgrade-option {
+    margin: 4px 0;
+    padding: 8px 12px;
+    border-width: 1px;
+    border-color: rgb(60, 60, 70);
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.15);
+
+    transition-property: border-color, background-color, scale;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-out;
+}
+
+.upgrade-option .unity-toggle__input {
+    display: none;
+}
+
+.upgrade-option .unity-toggle__label {
+    margin: 0;
+}
+
+.upgrade-option:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: rgb(90, 90, 105);
+}
+
+.upgrade-option.selected {
+    border-color: rgb(0, 120, 140);
+    background-color: rgba(0, 120, 140, 0.35);
+}
+
+.upgrade-option:active {
+    scale: 0.98;
+}
