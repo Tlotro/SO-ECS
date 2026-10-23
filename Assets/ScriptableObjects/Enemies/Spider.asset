@@ -16,4 +16,4 @@ MonoBehaviour:
   Speed: 6
   XPValue: 5
   damage: 2
-  EnemySprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  EnemySprite: {fileID: 1486437266, guid: cec3f503bcf5a644aa27b2e3fcf0be05, type: 3}

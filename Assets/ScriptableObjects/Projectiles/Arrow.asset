@@ -15,7 +15,7 @@ MonoBehaviour:
   damage: 5
   Speed: 10
   ignoreWalls: 0
-  ProjectileSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  ProjectileSprite: {fileID: -7115028345273148628, guid: 1646f229277bf2e4f884d715946abf48, type: 3}
   _projectile:
     rid: 597482850027569233
   references:
