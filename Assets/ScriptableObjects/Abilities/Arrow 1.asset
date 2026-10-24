@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
   m_Name: Arrow 1
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 0}
-  abilityCooldown: 0.05
+  nextLevel: {fileID: 11400000, guid: 8fad7284888e9d94d829dcb894952b60, type: 2}
+  abilityCooldown: 0.1
   _ability:
     rid: 597482850027569230
+  description: 
   references:
     version: 2
     RefIds:

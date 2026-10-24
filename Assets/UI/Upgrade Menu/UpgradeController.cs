@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -12,6 +14,7 @@ public class UpgradeController : MonoBehaviour
 
     private readonly List<Toggle> m_Options = new List<Toggle>();
     private int m_SelectedIndex = -1;
+    public UnityEvent<int> Selected;
 
     void Start()
     {
@@ -66,7 +69,7 @@ public class UpgradeController : MonoBehaviour
         }
     }
 
-    public void ShowUpgradeMenu(List<string> upgrades)
+    public void ShowUpgradeMenu(string[] upgrades)
     {
         for (int i = 0; i < 3; i++)
             m_Options[i].label = upgrades[i];
@@ -80,6 +83,7 @@ public class UpgradeController : MonoBehaviour
     private void OnConfirm()
     {
         if (m_SelectedIndex < 0) return;
+        Selected?.Invoke(m_SelectedIndex);
 
         SetUpgradeMenuVisible(false);
         Time.timeScale = 1.0f;

@@ -13,8 +13,7 @@ public class AbilitySO : ScriptableObject
     [SerializeReference]
     private IAbility _ability;
     private CancellationTokenSource cts;
-
-    public void ActivateAbility(PlayerController player) => _ability?.ActivateAbility(player);
+    public string description;
 
     public async void Run()
     {
@@ -25,17 +24,19 @@ public class AbilitySO : ScriptableObject
             while (true)
             {
                 cts.Token.ThrowIfCancellationRequested();
-                ActivateAbility(GlobalDataSO.Instance.player.GetComponent<PlayerController>());
+                _ability?.ActivateAbility(GlobalDataSO.Instance.player.GetComponent<PlayerController>());
                 await Awaitable.WaitForSecondsAsync(abilityCooldown, CancellationToken.None);
             }
         }
-        catch (OperationCanceledException) { }
+        catch (OperationCanceledException)
+        {
+            cts?.Dispose();
+        }
     }
 
     public void Stop()
     {
         cts?.Cancel();
-        cts?.Dispose();
     }
 }
 

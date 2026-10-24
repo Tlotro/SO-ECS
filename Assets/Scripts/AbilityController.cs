@@ -12,6 +12,13 @@ public class AbilityController : MonoBehaviour
         foreach (var ability in abilities)
         {
             ability.Run();
+            int i = GlobalDataSO.Instance.CurrentAbilityPool.FindIndex(x=>x.newAbility == ability);
+            if (i >= 0)
+            {
+                GlobalDataSO.Instance.CurrentAbilityPool.RemoveAt(i);
+            }
+            if (ability.nextLevel != null)
+                GlobalDataSO.Instance.CurrentAbilityPool.Add(new Upgrade(ability, ability.nextLevel));
         }
     }
 
@@ -39,6 +46,14 @@ public class AbilityController : MonoBehaviour
         {
             RemoveAbility(ability);
             AddAbility(ability.nextLevel);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var ability in abilities)
+        {
+            ability.Stop();
         }
     }
 }

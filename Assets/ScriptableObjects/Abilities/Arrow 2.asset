@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
+  m_Name: Arrow 2
+  m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
+  nextLevel: {fileID: 11400000, guid: 97616d6d851b40646bb6ea8cfe7784a0, type: 2}
+  abilityCooldown: 0.05
+  _ability:
+    rid: 597482850027569230
+  description: 'Fireball 2: delay: 0.1 -> 0.05'
+  references:
+    version: 2
+    RefIds:
+    - rid: 597482850027569230
+      type: {class: ArrowSkill, ns: , asm: Assembly-CSharp}
+      data:
+        _projectile: {fileID: 11400000, guid: 6d66c8cb59665f540bedac2f67889903, type: 2}

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GlobalDataSO.Reset();
+        GlobalDataSO.Instance.Reset();
         GlobalDataSO.Instance.player = this.gameObject;
         hpController.HP = 100;
     }
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public void Kill()
     {
-        Debug.Log("U ded, lol");
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
