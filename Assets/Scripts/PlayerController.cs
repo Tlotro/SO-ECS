@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerController : MonoBehaviour
 {
     public MovementController movementController;
     public HPController hpController;
     public InputActionReference move;
+
+    private SpriteRenderer spriteRenderer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,12 +16,15 @@ public class PlayerController : MonoBehaviour
         GlobalDataSO.Instance.Reset();
         GlobalDataSO.Instance.player = this.gameObject;
         hpController.HP = 100;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       movementController.Direction = move.action.ReadValue<Vector2>();
+        movementController.Direction = move.action.ReadValue<Vector2>();
+        if (movementController.Direction.x != 0) spriteRenderer.flipX = movementController.Direction.x > 0;
     }
 
     public void Kill()
