@@ -60,12 +60,104 @@ public sealed class ArrowSkill : IAbility
     }
 }
 
-public sealed class LightningSkill : IAbility
+public sealed class BoomerangSkill : IAbility
 {
+    [SerializeField]
+    ProjectileSO _projectile;
 
     public void ActivateAbility(PlayerController player)
     {
-        // Lightning
+        GameObject arrow = Projectile.CreateProjectile(_projectile);
+        Vector2 mousepos = Camera.main.GetComponent<CameraFollow>().mouseAction.action.ReadValue<Vector2>();
+        arrow.transform.position = player.transform.position;
+        arrow.transform.up = Camera.main.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, -Camera.main.transform.position.z)) - player.gameObject.transform.position;
+        arrow.transform.Rotate(Vector3.forward, -90);
+        arrow.GetComponent<MovementController>().Direction = arrow.transform.up;
+    }
+}
+
+public sealed class BoomerangSkill2 : IAbility
+{
+    [SerializeField]
+    ProjectileSO _projectile;
+
+    public void ActivateAbility(PlayerController player)
+    {
+        GameObject arrow = Projectile.CreateProjectile(_projectile);
+        Vector2 mousepos = Camera.main.GetComponent<CameraFollow>().mouseAction.action.ReadValue<Vector2>();
+        arrow.transform.position = player.transform.position;
+        arrow.transform.up = Camera.main.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, -Camera.main.transform.position.z)) - player.gameObject.transform.position;
+        arrow.transform.Rotate(Vector3.forward, -90);
+        arrow.GetComponent<MovementController>().Direction = arrow.transform.up;
+
+
+        arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position;
+        arrow.transform.up = UnityEngine.Random.onUnitCircle;
+        arrow.GetComponent<MovementController>().Direction = arrow.transform.up;
+    }
+}
+public sealed class BoneSkill1 : IAbility
+{
+    [SerializeField]
+    ProjectileSO _projectile;
+
+    public void ActivateAbility(PlayerController player)
+    {
+        GameObject arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[] { Vector3.up };
+    }
+}
+
+public sealed class BoneSkill2 : IAbility
+{
+    [SerializeField]
+    ProjectileSO _projectile;
+    public static Quaternion rotate = Quaternion.AngleAxis(180, Vector3.forward);
+
+    public void ActivateAbility(PlayerController player)
+    {
+        GameObject arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[] { Vector3.up * 1.5f };
+
+        arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + rotate * Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[] { rotate * Vector3.up * 1.5f };
+    }
+}
+
+public sealed class BoneSkill3 : IAbility
+{
+    [SerializeField]
+    ProjectileSO _projectile;
+    public static Quaternion rotate = Quaternion.AngleAxis(120, Vector3.forward);
+
+    public void ActivateAbility(PlayerController player)
+    {
+        GameObject arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[]{Vector3.up * 2f };
+
+        arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + rotate * Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[] { rotate * Vector3.up * 2f };
+
+        arrow = Projectile.CreateProjectile(_projectile);
+        arrow.transform.position = player.transform.position + rotate * rotate * Vector3.up;
+        arrow.GetComponent<Projectile>().extraData = new System.Object[] { rotate * rotate * Vector3.up * 2f };
+    }
+}
+public sealed class HealSkill : IAbility
+{
+    [SerializeField]
+    public float Heal;
+    public static Quaternion rotate = Quaternion.AngleAxis(120, Vector3.forward);
+
+    public void ActivateAbility(PlayerController player)
+    {
+        player.GetComponent<HPController>().Heal(Heal);
     }
 }
 

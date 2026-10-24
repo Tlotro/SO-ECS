@@ -8,6 +8,7 @@ public class ProjectileSO : ScriptableObject
     public float damage = 0;
     public float Speed = 0;
     public bool ignoreWalls;
+    public float MaxLifetime;
     public Sprite ProjectileSprite;
     [SerializeReference]
     private IProjectile _projectile;
@@ -31,9 +32,33 @@ public sealed class ArrowProjectile : IProjectile
 { 
 
 }
-public sealed class LightningProjectile : IProjectile
+public sealed class BoomerangProjectile : IProjectile
 {
+    void IProjectile.Update(Projectile self)
+    {
+        self.gameObject.transform.Rotate(Vector3.forward, Time.deltaTime*360);
+        self.movementController.Direction = self.gameObject.transform.up;
+    }
 
+    void IProjectile.OnHit(Projectile self, Enemy hit)
+    {
+        //hit.GetComponent<HPController>().immune.Add(self.gameObject);
+    }
+}
+
+public sealed class BoneProjectile : IProjectile
+{
+    void IProjectile.Update(Projectile self)
+    {
+        self.extraData[0] = Quaternion.AngleAxis(360*Time.deltaTime, Vector3.forward) * (Vector3)self.extraData[0];
+        self.transform.position = GlobalDataSO.Instance.player.transform.position + (Vector3)self.extraData[0];
+        self.gameObject.transform.Rotate(Vector3.forward, -Time.deltaTime * 1800);
+    }
+
+    void IProjectile.OnHit(Projectile self, Enemy hit)
+    {
+        //hit.GetComponent<HPController>().immune.Add(self.gameObject);
+    }
 }
 
 #if UNITY_EDITOR

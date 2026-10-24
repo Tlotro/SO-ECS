@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityCooldown: 0.025
   _ability:
     rid: 597482850027569230
-  description: 'Fireball 2: delay: 0.05 -> 0.025'
+  description: 'Fireball 3: delay: 0.05 -> 0.025'
   references:
     version: 2
     RefIds:

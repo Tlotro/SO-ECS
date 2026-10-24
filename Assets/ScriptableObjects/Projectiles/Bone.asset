@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71e4ca4b1acb5c449ee4cce666ad6d4, type: 3}
+  m_Name: Bone
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileSO
+  damage: 10
+  Speed: 0
+  ignoreWalls: 1
+  MaxLifetime: 1
+  ProjectileSprite: {fileID: -3688734963496382786, guid: 1646f229277bf2e4f884d715946abf48, type: 3}
+  _projectile:
+    rid: 597482867459620931
+  references:
+    version: 2
+    RefIds:
+    - rid: 597482867459620931
+      type: {class: BoneProjectile, ns: , asm: Assembly-CSharp}
+      data: 

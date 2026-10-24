@@ -5,20 +5,27 @@ using UnityEngine;
 
 public class AbilityController : MonoBehaviour
 {
+    [System.NonSerialized]
+    public List<Upgrade> CurrentAbilityPool = new List<Upgrade>();
     public List<AbilitySO> abilities = new List<AbilitySO>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        foreach (var ability in GlobalDataSO.Instance.AbilitiesStarterUpgradePool)
+        {
+            CurrentAbilityPool.Add(new Upgrade(null, ability));
+        }
+
         foreach (var ability in abilities)
         {
             ability.Run();
-            int i = GlobalDataSO.Instance.CurrentAbilityPool.FindIndex(x=>x.newAbility == ability);
+            int i = CurrentAbilityPool.FindIndex(x=>x.newAbility == ability);
             if (i >= 0)
             {
-                GlobalDataSO.Instance.CurrentAbilityPool.RemoveAt(i);
+                CurrentAbilityPool.RemoveAt(i);
             }
             if (ability.nextLevel != null)
-                GlobalDataSO.Instance.CurrentAbilityPool.Add(new Upgrade(ability, ability.nextLevel));
+                CurrentAbilityPool.Add(new Upgrade(ability, ability.nextLevel));
         }
     }
 

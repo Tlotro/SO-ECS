@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ public class HPController : MonoBehaviour
     [SerializeField]
     private float _maxhp;
     public float MAXHP { get { return _maxhp; } set { _maxhp = value; HealthChange.Invoke(_hp, _maxhp); } }
+    public List<GameObject> immune = new List<GameObject>();
     public UnityEvent Kill;
     public UnityEvent<float> Damage;
     public UnityEvent<float> Healing;

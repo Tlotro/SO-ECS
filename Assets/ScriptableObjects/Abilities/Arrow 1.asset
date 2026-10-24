@@ -16,7 +16,7 @@ MonoBehaviour:
   abilityCooldown: 0.1
   _ability:
     rid: 597482850027569230
-  description: 
+  description: 'Fireball 1: Throw fireballs towards cursor'
   references:
     version: 2
     RefIds:

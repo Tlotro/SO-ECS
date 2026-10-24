@@ -8,6 +8,7 @@ public class XPController : MonoBehaviour
     int xp = 0;
     public int xpBase;
     public int xpInc;
+    public AbilityController abilityController;
     public UnityEvent<float> XPGain;
     public UnityEvent<float, float> XPChange;
     public UnityEvent<string[]> LevelUp;
@@ -23,11 +24,11 @@ public class XPController : MonoBehaviour
             this.xp = this.xp - (xpBase + xpInc * level);
             level++;
             string[] choice = new string[3];
-            if (GlobalDataSO.Instance.CurrentAbilityPool.Count > 0)
+            if (abilityController.CurrentAbilityPool.Count > 0)
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    Upgrade upgrade = GlobalDataSO.Instance.CurrentAbilityPool[UnityEngine.Random.Range(0, GlobalDataSO.Instance.CurrentAbilityPool.Count)];
+                    Upgrade upgrade = abilityController.CurrentAbilityPool[UnityEngine.Random.Range(0, abilityController.CurrentAbilityPool.Count)];
                     Debug.Log(upgrade);
                     currentUpgrades[i] = upgrade;
                     choice[i] = upgrade.newAbility.description;
@@ -40,11 +41,11 @@ public class XPController : MonoBehaviour
     public void applyUpgrade(int index)
     {
         if (currentUpgrades[index].oldAbility != null)
-            GlobalDataSO.Instance.player.GetComponent<AbilityController>().RemoveAbility(currentUpgrades[index].oldAbility);
-        GlobalDataSO.Instance.player.GetComponent<AbilityController>().AddAbility(currentUpgrades[index].newAbility);
-        GlobalDataSO.Instance.CurrentAbilityPool.Remove(currentUpgrades[index]);
+            abilityController.RemoveAbility(currentUpgrades[index].oldAbility);
+        abilityController.AddAbility(currentUpgrades[index].newAbility);
+        abilityController.CurrentAbilityPool.Remove(currentUpgrades[index]);
         if (currentUpgrades[index].newAbility.nextLevel != null)
-            GlobalDataSO.Instance.CurrentAbilityPool.Add(new Upgrade(currentUpgrades[index].newAbility, currentUpgrades[index].newAbility.nextLevel));
+            abilityController.CurrentAbilityPool.Add(new Upgrade(currentUpgrades[index].newAbility, currentUpgrades[index].newAbility.nextLevel));
     }
 }
 public struct Upgrade

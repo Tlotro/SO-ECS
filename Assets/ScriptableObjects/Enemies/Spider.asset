@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90abacd972a461c4eaa579f1a1565822, type: 3}
   m_Name: Spider
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
-  MaxHP: 5
-  Speed: 6
-  XPValue: 5
-  damage: 2
+  MaxHP: 2
+  Speed: 10
+  XPValue: 2
+  damage: 1
   EnemySprite: {fileID: 1486437266, guid: cec3f503bcf5a644aa27b2e3fcf0be05, type: 3}

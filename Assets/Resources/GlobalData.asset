@@ -18,3 +18,10 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 6123f75b44c6a7e4fab3f16e7d62e53d, type: 2}
   - {fileID: 11400000, guid: 4e7730576a4d1844e9a4727c175ea1c4, type: 2}
+  - {fileID: 11400000, guid: 01cad29e58aab9d45adab947fe93e708, type: 2}
+  - {fileID: 11400000, guid: 67d815b59af2fe14f9197c23e94ee956, type: 2}
+  AbilitiesStarterUpgradePool:
+  - {fileID: 11400000, guid: df64a09bce884ea47a5533f31cc27418, type: 2}
+  - {fileID: 11400000, guid: 0ea62f0fb8ae25c40b7e337001f2e427, type: 2}
+  - {fileID: 11400000, guid: 257fb6c917cfe7849a59dbfa665aa81e, type: 2}
+  - {fileID: 11400000, guid: 066d3def488712b46a68125d78421684, type: 2}

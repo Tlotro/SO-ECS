@@ -19,8 +19,6 @@ public class GlobalDataSO : ScriptableObject
     [System.NonSerialized]
     public Stack<GameObject> projectilesPool = new Stack<GameObject>();
     public AbilitySO[] AbilitiesStarterUpgradePool;
-    [System.NonSerialized]
-    public List<Upgrade> CurrentAbilityPool = new List<Upgrade>();
     public static GlobalDataSO Instance
     {
         get
@@ -39,9 +37,6 @@ public class GlobalDataSO : ScriptableObject
         enemiesToSpawn = Instance.waves[0].spawnCount;
         enemiesPool.Clear();
         projectilesPool.Clear();
-        foreach(var ability in Instance.AbilitiesStarterUpgradePool)
-        {
-
-        }
+        
     }
 }

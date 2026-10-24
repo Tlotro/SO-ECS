@@ -3004,6 +3004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HPController
   _hp: 100
   _maxhp: 100
+  immune: []
   Kill:
     m_PersistentCalls:
       m_Calls:
@@ -3104,6 +3105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   xpBase: 100
   xpInc: 100
+  abilityController: {fileID: 1943743800}
   XPGain:
     m_PersistentCalls:
       m_Calls: []

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
+  m_Name: Boomerang 1
+  m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
+  nextLevel: {fileID: 11400000, guid: be8b0dfa16d5f234f98a80f41fb9351c, type: 2}
+  abilityCooldown: 0.5
+  _ability:
+    rid: 597482865646108744
+  description: 'Lightning 1: Throw a lightning bolt in an ark around the cursor '
+  references:
+    version: 2
+    RefIds:
+    - rid: 597482865646108744
+      type: {class: BoomerangSkill, ns: , asm: Assembly-CSharp}
+      data:
+        _projectile: {fileID: 11400000, guid: 60423c8fa1271b341905ac6e0ba7891c, type: 2}

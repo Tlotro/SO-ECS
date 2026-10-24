@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wave 2
   m_EditorClassIdentifier: Assembly-CSharp::WaveDataSO
   enemy: {fileID: 11400000, guid: 74fd8c62cc883b44192c00bb65edc1ff, type: 2}
-  spawnDelay: 0.1
-  spawnCount: 100
+  spawnDelay: 0.05
+  spawnCount: 200
