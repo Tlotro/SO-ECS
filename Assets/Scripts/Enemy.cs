@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour
     public HPController hpController;
     [System.NonSerialized]
     public EnemySO data;
+
+    private SpriteRenderer spriteRenderer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() { }
 
@@ -15,6 +18,7 @@ public class Enemy : MonoBehaviour
         if (GlobalDataSO.Instance.player != null)
         {
             movementController.Direction = GlobalDataSO.Instance.player.transform.position - transform.position;
+            spriteRenderer.flipX = movementController.Direction.x >= 0;
         }
     }
 
@@ -40,7 +44,8 @@ public class Enemy : MonoBehaviour
         script.data = so;
         script.movementController.speed = so.Speed;
         script.hpController.HP = so.MaxHP;
-        script.gameObject.GetComponent<SpriteRenderer>().sprite = so.EnemySprite;
+        script.spriteRenderer = script.gameObject.GetComponent<SpriteRenderer>();
+        script.spriteRenderer.sprite = so.EnemySprite;
         return enemy;
     }
 }
