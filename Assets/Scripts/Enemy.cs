@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
 
     public void Kill()
     {
+        GlobalDataSO.Instance.player.GetComponent<XPController>().AddXP(data.XPValue);
         GlobalDataSO.Instance.enemiesPool.Push(gameObject);
         gameObject.SetActive(false);
     }
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
         script.data = so;
         script.movementController.speed = so.Speed;
         script.hpController.HP = so.MaxHP;
+        script.hpController.MAXHP = so.MaxHP;
         script.spriteRenderer = script.gameObject.GetComponent<SpriteRenderer>();
         script.spriteRenderer.sprite = so.EnemySprite;
         return enemy;

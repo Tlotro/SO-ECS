@@ -199,6 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1eea184ee936242894d6a57d3591d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HPController
+  _hp: 0
+  _maxhp: 0
+  immune: []
   Kill:
     m_PersistentCalls:
       m_Calls:
@@ -215,5 +218,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   Damage:
+    m_PersistentCalls:
+      m_Calls: []
+  Healing:
+    m_PersistentCalls:
+      m_Calls: []
+  HealthChange:
     m_PersistentCalls:
       m_Calls: []
