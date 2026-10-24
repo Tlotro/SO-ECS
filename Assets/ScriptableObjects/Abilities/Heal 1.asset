@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
   m_Name: Heal 1
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 11400000, guid: 674feb6c2c9a1ee4b81d660e614be871, type: 2}
+  nextLevels:
+  - {fileID: 11400000, guid: 674feb6c2c9a1ee4b81d660e614be871, type: 2}
   abilityCooldown: 60
   _ability:
     rid: 597482867459620935

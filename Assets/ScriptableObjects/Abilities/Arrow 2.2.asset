@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
+  m_Name: Arrow 2.2
+  m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
+  nextLevels:
+  - {fileID: 11400000, guid: 9628f6770a9d1164ba3a217df4b7e3f1, type: 2}
+  abilityCooldown: 0.1
+  _ability:
+    rid: 597482868571111491
+  description: 'Fireburst: Throw 2 fireballs in random directions'
+  references:
+    version: 2
+    RefIds:
+    - rid: 597482868571111491
+      type: {class: ArrowSkillAlt, ns: , asm: Assembly-CSharp}
+      data:
+        _projectile: {fileID: 11400000, guid: 6d66c8cb59665f540bedac2f67889903, type: 2}
+        count: 2

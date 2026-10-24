@@ -24,8 +24,8 @@ public class AbilityController : MonoBehaviour
             {
                 CurrentAbilityPool.RemoveAt(i);
             }
-            if (ability.nextLevel != null)
-                CurrentAbilityPool.Add(new Upgrade(ability, ability.nextLevel));
+            foreach (var a in ability.nextLevels)
+                CurrentAbilityPool.Add(new Upgrade(ability, a));
         }
     }
 
@@ -43,16 +43,10 @@ public class AbilityController : MonoBehaviour
 
     public void RemoveAbility(AbilitySO ability)
     {
-        ability.Stop();
-        abilities.Remove(ability);
-    }
-
-    public void Upgrade(AbilitySO ability)
-    {
-        if (ability.nextLevel != null)
+        if (abilities.Contains(ability))
         {
-            RemoveAbility(ability);
-            AddAbility(ability.nextLevel);
+            ability.Stop();
+            abilities.Remove(ability);
         }
     }
 

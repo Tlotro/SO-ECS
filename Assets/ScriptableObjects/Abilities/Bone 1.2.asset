@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
-  m_Name: Heal 3
+  m_Name: Bone 1.2
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 0}
-  abilityCooldown: 60
+  nextLevels:
+  - {fileID: 11400000, guid: fd8982badd7910945a00f0a764cb3004, type: 2}
+  abilityCooldown: 1
   _ability:
-    rid: 597482867459620935
-  description: 'Heal 3: Healing: 15 HP -> 20 HP'
+    rid: 597482867459620933
+  description: 'Slash 2:  One slash -> Two slashes'
   references:
     version: 2
     RefIds:
-    - rid: 597482867459620935
-      type: {class: HealSkill, ns: , asm: Assembly-CSharp}
+    - rid: 597482867459620933
+      type: {class: BoneSkill2, ns: , asm: Assembly-CSharp}
       data:
-        Heal: 20
+        _projectile: {fileID: 11400000, guid: f69e6914c750a8445be0691831896e56, type: 2}

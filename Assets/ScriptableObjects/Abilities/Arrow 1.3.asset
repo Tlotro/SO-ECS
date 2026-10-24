@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
-  m_Name: Arrow 2
+  m_Name: Arrow 1.3
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 11400000, guid: 97616d6d851b40646bb6ea8cfe7784a0, type: 2}
-  abilityCooldown: 0.05
+  nextLevel: {fileID: 0}
+  abilityCooldown: 0.025
   _ability:
     rid: 597482850027569230
-  description: 'Fireball 2: delay: 0.1 -> 0.05'
+  description: 'Fireball 3: delay: 0.05 -> 0.025'
   references:
     version: 2
     RefIds:

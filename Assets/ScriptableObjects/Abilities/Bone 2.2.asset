@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
-  m_Name: Arrow 3
+  m_Name: Bone 2.2
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 0}
-  abilityCooldown: 0.025
+  nextLevels:
+  - {fileID: 11400000, guid: 5b08f0ff8db116147bf27b91a25eb0cb, type: 2}
+  abilityCooldown: 1
   _ability:
-    rid: 597482850027569230
-  description: 'Fireball 3: delay: 0.05 -> 0.025'
+    rid: 597482868571111493
+  description: 'Longslash: Increase distance'
   references:
     version: 2
     RefIds:
-    - rid: 597482850027569230
-      type: {class: ArrowSkill, ns: , asm: Assembly-CSharp}
+    - rid: 597482868571111493
+      type: {class: BoneSkill2Alt, ns: , asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 11400000, guid: 6d66c8cb59665f540bedac2f67889903, type: 2}
+        _projectile: {fileID: 11400000, guid: f69e6914c750a8445be0691831896e56, type: 2}

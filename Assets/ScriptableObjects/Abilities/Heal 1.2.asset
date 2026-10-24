@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
-  m_Name: Heal 2
+  m_Name: Heal 1.2
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 11400000, guid: 13dca6bc94902b346b6e058a8360925f, type: 2}
+  nextLevels:
+  - {fileID: 11400000, guid: 13dca6bc94902b346b6e058a8360925f, type: 2}
   abilityCooldown: 60
   _ability:
     rid: 597482867459620935

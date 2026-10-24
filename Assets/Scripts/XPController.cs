@@ -44,8 +44,8 @@ public class XPController : MonoBehaviour
             abilityController.RemoveAbility(currentUpgrades[index].oldAbility);
         abilityController.AddAbility(currentUpgrades[index].newAbility);
         abilityController.CurrentAbilityPool.Remove(currentUpgrades[index]);
-        if (currentUpgrades[index].newAbility.nextLevel != null)
-            abilityController.CurrentAbilityPool.Add(new Upgrade(currentUpgrades[index].newAbility, currentUpgrades[index].newAbility.nextLevel));
+        foreach (var a in currentUpgrades[index].newAbility.nextLevels)
+            abilityController.CurrentAbilityPool.Add(new Upgrade(currentUpgrades[index].newAbility, a));
     }
 }
 public struct Upgrade

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
-  m_Name: Boomerang 3
+  m_Name: Heal 2.2
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
   nextLevel: {fileID: 0}
-  abilityCooldown: 0.33
+  abilityCooldown: 60
   _ability:
-    rid: 597482865646108746
-  description: 'Lightning 3:  Cooldown: 0.5 -> 0.33'
+    rid: 597482867459620935
+  description: 'Heal 3: Healing: 15 HP -> 20 HP'
   references:
     version: 2
     RefIds:
-    - rid: 597482865646108746
-      type: {class: BoomerangSkill2, ns: , asm: Assembly-CSharp}
+    - rid: 597482867459620935
+      type: {class: HealSkill, ns: , asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 11400000, guid: 60423c8fa1271b341905ac6e0ba7891c, type: 2}
+        Heal: 20

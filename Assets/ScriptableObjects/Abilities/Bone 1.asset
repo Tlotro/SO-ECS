@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db2878da2329df43aa8ecf7e1973230, type: 3}
   m_Name: Bone 1
   m_EditorClassIdentifier: Assembly-CSharp::AbilitySO
-  nextLevel: {fileID: 11400000, guid: a4eaab998f5dccd47964bf65c5024ec5, type: 2}
+  nextLevels:
+  - {fileID: 11400000, guid: a4eaab998f5dccd47964bf65c5024ec5, type: 2}
+  - {fileID: 11400000, guid: 58586f5127ff51a408d0b615c424cb79, type: 2}
   abilityCooldown: 1
   _ability:
     rid: 597482867459620932
