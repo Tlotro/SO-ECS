@@ -8,7 +8,7 @@ public class ProjectileSO : ScriptableObject
     public float damage = 0;
     public float Speed = 0;
     public bool ignoreWalls;
-    public float MaxLifetime;
+    public float MaxLifetime = -1;
     public Sprite ProjectileSprite;
     [SerializeReference]
     private IProjectile _projectile;
@@ -21,9 +21,9 @@ public class ProjectileSO : ScriptableObject
 
 public interface IProjectile
 {
-    void OnHit(Projectile self, Enemy hit) { self.Kill(); }
+    void OnHit(Projectile self, Enemy hit) { self.Erase(); }
 
-    void OnWallHit(Projectile self) { self.Kill(); }
+    void OnWallHit(Projectile self) { self.Erase(); }
     void Update(Projectile self) { }
     void Start(Projectile self) { }
 }

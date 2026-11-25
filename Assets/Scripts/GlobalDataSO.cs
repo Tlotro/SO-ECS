@@ -19,6 +19,7 @@ public class GlobalDataSO : ScriptableObject
     [System.NonSerialized]
     public Stack<GameObject> projectilesPool = new Stack<GameObject>();
     public AbilitySO[] AbilitiesStarterUpgradePool;
+    public bool FuckMeUp;
     public static GlobalDataSO Instance
     {
         get

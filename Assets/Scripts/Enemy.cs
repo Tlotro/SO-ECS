@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Enemy : MonoBehaviour
     public HPController hpController;
     [System.NonSerialized]
     public EnemySO data;
+    public float erasetime = -1;
 
     private SpriteRenderer spriteRenderer;
 
@@ -15,7 +17,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalDataSO.Instance.player != null)
+        if (erasetime != -1 && Time.realtimeSinceStartup > erasetime)
+            Erase();
+        else if (GlobalDataSO.Instance.player != null)
         {
             movementController.Direction = GlobalDataSO.Instance.player.transform.position - transform.position;
             spriteRenderer.flipX = movementController.Direction.x >= 0;
@@ -25,6 +29,11 @@ public class Enemy : MonoBehaviour
     public void Kill()
     {
         GlobalDataSO.Instance.player.GetComponent<XPController>().AddXP(data.XPValue);
+        Erase();
+    }
+
+    public void Erase()
+    {
         GlobalDataSO.Instance.enemiesPool.Push(gameObject);
         gameObject.SetActive(false);
     }
@@ -48,6 +57,10 @@ public class Enemy : MonoBehaviour
         script.hpController.MAXHP = so.MaxHP;
         script.spriteRenderer = script.gameObject.GetComponent<SpriteRenderer>();
         script.spriteRenderer.sprite = so.EnemySprite;
+        if (so.MaxLifetime != -1)
+        {
+            script.erasetime = Time.realtimeSinceStartup + so.MaxLifetime;
+        }
         return enemy;
     }
 }

@@ -5,16 +5,16 @@ public class Projectile : MonoBehaviour
     public MovementController movementController; 
     [System.NonSerialized]
     public ProjectileSO data;
-    public float lifetime = 0;
+    public float erasetime = -1;
     public System.Object[] extraData;
     void Start() => data.start(this);
 
     // Update is called once per frame
     void Update()
     {
-        lifetime += Time.deltaTime;
-        if ((data.MaxLifetime > 0) && (lifetime > data.MaxLifetime))
-            Kill();
+        if (erasetime != -1 && Time.realtimeSinceStartup > erasetime)
+            Erase();
+        else
         data.update(this);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void Kill()
+    public void Erase()
     {
         GlobalDataSO.Instance.projectilesPool.Push(gameObject);
         gameObject.SetActive(false);
@@ -49,7 +49,8 @@ public class Projectile : MonoBehaviour
             projectile = GlobalDataSO.Instance.projectilesPool.Pop();
         projectile.SetActive(true);
         Projectile script = projectile.GetComponent<Projectile>();
-        script.lifetime = 0;
+        if (so.MaxLifetime != -1)
+            script.erasetime = Time.realtimeSinceStartup + so.MaxLifetime;
         script.data = so;
         script.movementController.speed = so.Speed;
         script.gameObject.GetComponent<SpriteRenderer>().sprite = so.ProjectileSprite;

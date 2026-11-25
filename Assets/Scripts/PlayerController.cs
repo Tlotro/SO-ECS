@@ -34,10 +34,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if  (collision.gameObject.layer == 7)
+        if  (collision.gameObject.layer == 7 && !GlobalDataSO.Instance.FuckMeUp)
         {
             hpController.TakeDamage(collision.gameObject.GetComponent<Enemy>().data.damage);
-            collision.gameObject.GetComponent<HPController>().Kill.Invoke();
+            collision.gameObject.GetComponent<Enemy>().Erase();
         }
     }
 }

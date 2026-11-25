@@ -7,5 +7,6 @@ public class EnemySO : ScriptableObject
     public float Speed = 3f;
     public int XPValue = 5;
     public float damage = 0;
+    public float MaxLifetime = -1;
     public Sprite EnemySprite;
 }
